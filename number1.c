@@ -1,27 +1,29 @@
 #include<stdio.h>
-void main()
-{
-    int n,i=1;
-    printf("Enter a number");
-    scanf("%d",&n);
-    for(;i<=n;i++)
-    {
-        if(i%3==0&&i%5==0)
-		{
-			printf("%d \n",i);
-		}
-		else if(i%3==0)
-		{
-			printf("Fizz\n");
-		}
-		 else if(i%5==0)
-		{
-			printf("Buzz\n");
-		}
-		else
-		{
-			printf("%d\n",i);
-		}
 
+
+int main()
+{
+    int arr[100], n, i;
+    int num, count;
+
+    printf("Enter total number of elements:");
+    scanf("%d", &n);
+
+    printf("Enter the array elements : ");
+    for ( i = 0; i < n; i++)
+    {
+        scanf("%d",&arr[i]);
     }
+    
+    printf("Enter number to find Occurance:");
+    scanf("%d", &num);
+
+    count = 0;
+    for (i = 0; i < n; i++)
+    {
+        if (arr[i] == num)
+            count++;
+    }
+    printf("Occurance of %d is: %d\n", num, count);
+    return 0;
 }

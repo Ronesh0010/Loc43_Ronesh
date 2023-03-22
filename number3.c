@@ -1,14 +1,39 @@
-#include<stdio.h>
-void main()
+#include <stdio.h>
+ #include <conio.h>
+ 
+ 
+int main()
 {
-    int n,c,r ,sum=0;
-    printf("Enter a number");
-    scanf("%d",&n);
-    do
+    int a[10000],i,n,j,temp;
+   
+    printf("Enter size of the  array : ");
+    scanf("%d", &n);
+    printf("Enter elements in array : ");
+    for(i=0; i<n; i++)
     {
-        r=n%10;
-        sum=sum+r;
-        n/=10;
-    }while(n!=0);
-    printf("The sum of digit is %d",sum);
+        scanf("%d",&a[i]);
+    }
+      
+     
+    for(i=0; i<n-1; i++)
+    {
+           
+        for(j=0; j<n-i-1; j++)
+        {
+           if(a[j]>a[j+1])
+           {
+           	temp=a[j];
+           	a[j]=a[j+1];
+           	a[j+1]=temp;
+		   }
+ 
+        }
+       
+    }
+    printf("\narray elements in ascending order:\n ");
+ 
+    for(i=0; i<n; i++)
+    {
+       printf("%d ",a[i]);
+    }
 }
